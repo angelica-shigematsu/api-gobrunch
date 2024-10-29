@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go Brunch</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ <section class="section-left">
+
+  <div class="div-type-input">
+    <label class="label-title">Quantity</label>
+    <input type="number" placeholder="Type here" id="quantCard"/>
+  </div>
+
+ </section>
+  <section class="section-right">
+    <% if(quantCard) {%>
+      <% quantCard.forEach(function(quant){ %>
+        <article class="article-content">
+          <p class="article-number"><% quant %></p>
+        </article>
+      <% });} %>
+
+  </section>
+  <script>;
+    const input = document.querySelector("input");
+
+    input.addEventListener("keydown", (event) => {
+      let quantCard = Number(input.value);
+
+      for(let i = 1; i <= quantCard; i++) {
+          document.getElementsByClassName("section-right")[0].innerHTML += 
+          `<article class="article-content">
+            <p class="article-number">${i}</p>
+          </article>`
+        }
+      })
+
+      input.addEventListener("keydown", (event) => {
+      let quantCard = Number(input.value);
+
+      if (event.key == "Backspace") 
+      {
+        document.getElementsByClassName("section-right")[0].innerHTML = ''
+      }
+
+    })
+  </script>
+</body>
+</html>
