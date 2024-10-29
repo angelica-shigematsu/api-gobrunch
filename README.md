@@ -12,3 +12,4 @@ npm run dev
 ```
   localhost:3000
 ```
+PS: after put quantity in the input, click on button enter
